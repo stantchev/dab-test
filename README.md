@@ -1,19 +1,34 @@
+
 # dab-test
-Тест сайт за Държавната агенция по бежанците към МС в РБ.
-======================================================================
-29.11.2024 - Update notes:
-  Language Switching:
-Added a language store using Zustand for persistent state management
-Created a separate LanguageSwitcher component
-Added visual feedback for the selected language
-Prepared the structure for future internationalization
-  Search Functionality:
-Created a new SearchDialog component
-Implemented a modal search interface
-Added demo search results (can be connected to a real search API)
-Included keyboard navigation support
-  Code Organization:
-Separated concerns into individual components
-Created utility files for language management
-Added TypeScript types for better type safety
-Improved component structure
+
+Тестов уебсайт за Държавната агенция по бежанците към Министерски съвет на РБ.
+
+## Функционалности
+- **Превключване на език**: Реализирано чрез Zustand за управление на състоянието.
+- **Търсене**: Модален интерфейс с примерни резултати и клавиатурна навигация.
+- **Модулна структура**: Отделни компоненти за по-добра организация на кода.
+
+## Технологии
+- **TypeScript**
+- **React**
+- **TailwindCSS**
+
+## Употреба
+1. Клонирайте репозитория:
+   ```bash
+   git clone https://github.com/stantchev/dab-test.git
+   ```
+2. Инсталирайте зависимости:
+   ```bash
+   npm install
+   ```
+3. Стартирайте проекта:
+   ```bash
+   npm run dev
+   ```
+
+## Принос
+Приемаме предложения и подобрения чрез pull requests.
+
+## Лиценз
+Проектът е с отворен код и подлежи на лицензиране.
