@@ -20,34 +20,97 @@ interface SearchResult {
   url: string;
 }
 
+// Static data for real-time search
+// Static data for the footer pages (your provided elements)
+const staticData: SearchResult[] = [
+  {
+    title: "За нас",
+    description: "Научете повече за нашата организация и нейната мисия.",
+    url: "/about",
+  },
+  {
+    title: "Структура",
+    description: "Как е организирана нашата агенция.",
+    url: "/structure",
+  },
+  {
+    title: "Центрове",
+    description: "Информация за нашите настанителни и приемащи центрове.",
+    url: "/centers",
+  },
+  {
+    title: "Проекти",
+    description: "Научете повече за нашите текущи и бъдещи проекти.",
+    url: "/projects",
+  },
+  {
+    title: "Търсене на закрила",
+    description: "Какви са процедурите за търсене на международна закрила.",
+    url: "/asylum",
+  },
+  {
+    title: "Процедури",
+    description: "Подробности за различни процедури, свързани със закрила.",
+    url: "/procedures",
+  },
+  {
+    title: "Права и задължения",
+    description: "Какви са правата и задълженията на лицата, търсещи закрила.",
+    url: "/rights",
+  },
+  {
+    title: "Често задавани въпроси",
+    description: "Отговори на често задавани въпроси по въпросите за закрила.",
+    url: "/faq",
+  },
+  {
+    title: "Жилищно настаняване",
+    description: "Какви възможности за жилищно настаняване предлагаме.",
+    url: "integration/housing",
+  },
+  {
+    title: "Образование",
+    description: "Образователни услуги за бежанци и хора с нужда от закрила.",
+    url: "integration/education",
+  },
+  {
+    title: "Заетост",
+    description: "Програмите ни за заетост на бежанци и лица, търсещи закрила.",
+    url: "integration/employment",
+  },
+  {
+    title: "Здравеопазване",
+    description: "Достъп до здравни услуги за бежанци и търсещи закрила.",
+    url: "integration/healthcare",
+  },
+];
+
 export function SearchDialog() {
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
+  const [error, setError] = useState<string>("");
 
   const handleSearch = (query: string) => {
     setSearchQuery(query);
-    // Simulate search results - in a real application, this would call an API
-    const demoResults: SearchResult[] = query
-      ? [
-          {
-            title: "Търсене на закрила",
-            description: "Информация за процедурата по предоставяне на международна закрила",
-            url: "/asylum",
-          },
-          {
-            title: "Контакти",
-            description: "Адреси и телефони за връзка с ДАБ",
-            url: "/contact",
-          },
-          {
-            title: "Документи",
-            description: "Важни документи и формуляри",
-            url: "/documents",
-          },
-        ]
-      : [];
-    setResults(demoResults);
+
+    if (query.trim().length === 0) {
+      setError("Моля, въведете ключова дума за търсене.");
+      setResults([]);
+      return;
+    }
+
+    const filteredResults = staticData.filter((item) =>
+      item.title.toLowerCase().includes(query.toLowerCase())
+    );
+
+    if (filteredResults.length === 0) {
+      setError(`Няма намерени резултати за "${query}".`);
+    } else {
+      setError("");
+    }
+
+    setResults(filteredResults);
   };
 
   return (
@@ -68,6 +131,7 @@ export function SearchDialog() {
             onChange={(e) => handleSearch(e.target.value)}
             className="col-span-3"
           />
+          {error && <p className="text-sm text-red-500">{error}</p>}
           {results.length > 0 && (
             <ScrollArea className="h-[300px] rounded-md border p-4">
               <div className="space-y-4">
