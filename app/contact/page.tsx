@@ -32,9 +32,11 @@ export default function ContactPage() {
                   <div>
                     <p className="font-medium">Адрес</p>
                     <p className="text-sm text-muted-foreground">
-                      ул. "Ген. Йосиф В. Гурко" 6
+                      бул. "Княгиня Мария Луиза" 114 Б
                       <br />
-                      София 1000
+                      1233 София
+                      <br />
+                      Район Сердика
                     </p>
                   </div>
                 </div>
@@ -43,7 +45,8 @@ export default function ContactPage() {
                   <Phone className="mt-1 h-5 w-5 text-primary" />
                   <div>
                     <p className="font-medium">Телефон</p>
-                    <p className="text-sm text-muted-foreground">+359 2 949 2115</p>
+                    <p className="text-sm text-muted-foreground">02/421 52 05</p>
+                    <p className="text-sm text-muted-foreground">02/421 52 06</p>
                   </div>
                 </div>
 
@@ -51,7 +54,7 @@ export default function ContactPage() {
                   <Mail className="mt-1 h-5 w-5 text-primary" />
                   <div>
                     <p className="font-medium">Email</p>
-                    <p className="text-sm text-muted-foreground">mail@e-gov.bg</p>
+                    <p className="text-sm text-muted-foreground">sar@saref.government.bg</p>
                   </div>
                 </div>
               </div>
