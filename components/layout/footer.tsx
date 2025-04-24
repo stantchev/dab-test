@@ -43,9 +43,9 @@ export default function Footer({ className }: FooterProps) {
           <div>
             <h3 className="mb-4 text-lg font-semibold">Контакти</h3>
             <address className="not-italic">
-              <p className="text-sm">ул. "Монтевидео" № 21</p>
-              <p className="text-sm">София 1618</p>
-              <p className="mt-2 text-sm">Тел: +359 2 81 81 1000</p>
+              <p className="text-sm">бул. "Княгиня Мария Луиза" 114 Б</p>
+              <p className="text-sm">1233 София, Район Сердика</p>
+              <p className="mt-2 text-sm">Тел: 02/421 52 05</p>
               <p className="text-sm">Email: sar@saref.government.bg</p>
             </address>
           </div>
